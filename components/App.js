@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/App.scss';
+import '../styles/components/app.scss';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -7,8 +7,9 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="header-div">
         <h1 className="header">React Boilerplate</h1>
+        <p className="header-p">Quickly start developing React projects using this boilerplate</p>
       </div>
     );
   }

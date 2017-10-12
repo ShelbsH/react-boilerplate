@@ -6,7 +6,8 @@
   "author": "Shelby Hurns",
   "license": "MIT",
   "scripts": {
-    "dev": "node index-server.js"
+    "dev": "node index-server.js",
+    "test": "jest"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -17,13 +18,16 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
     "extract-text-webpack-plugin": "^3.0.0",
+    "jest": "^21.2.1",
     "morgan": "^1.8.2",
     "node-sass": "^4.5.3",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-hot-loader": "^1.3.1",
-    "react-test-renderer": "^15.6.1",
+    "react-test-renderer": "^16.0.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
@@ -31,8 +35,15 @@
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.19.1"
   },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./tests/test_setup",
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
+  },
   "dependencies": {
     "express": "^4.15.4",
+    "identity-obj-proxy": "^3.0.0",
     "nodemon": "^1.12.0",
     "prop-types": "^15.5.10"
   }
