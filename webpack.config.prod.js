@@ -1,11 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
+const extractTextPlugin = require('extract-text-webpack-plugin');
+const htmlWebpackplugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: [
-    './index.js',
-    'webpack-hot-middleware/client'
-  ],
+  entry: ['./index.js'],
   output: {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -16,12 +15,10 @@ module.exports = {
       {
         test: /(\.scss|\.css)/,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      }, 
-      {
+      }, {
         test: /(\.woff|\.ttf|\.svg|\.eot|\.gif)/,
         use: 'url-loader'
-      }, 
-      {
+      }, {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader']
@@ -33,5 +30,9 @@ module.exports = {
       styles: path.resolve(__dirname, 'styles')
     }
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new extractTextPlugin({allChunks: true, filename: 'styles.css'}),
+    new htmlWebpackplugin({template: 'views/index.html', inject: false}),
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 }

@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node index-server.js",
+    "prod": "webpack --config webpack.config.prod.js",
     "test": "jest"
   },
   "devDependencies": {
@@ -21,6 +22,7 @@
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
     "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
     "jest": "^21.2.1",
     "morgan": "^1.8.2",
     "node-sass": "^4.5.3",
