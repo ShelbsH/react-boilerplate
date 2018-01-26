@@ -9,8 +9,8 @@ export default class App extends React.Component {
     return (
       <div className="header-div">
         <h1 className="header">React Boilerplate</h1>
-        <p className="header-p">Quickly start developing React projects using this boilerplate</p>
+        <p className="header-p">Quickly start developing React apps with this boilerplate</p>
       </div>
     );
   }
-};
+}
